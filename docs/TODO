@@ -24,3 +24,7 @@
 # 7/15/13 TODO: Write documentation for Player.py
 #-------------------------------------------------------------------------------
 # 7/15/13 TODO: Write tests for a lot of stuff
+#-------------------------------------------------------------------------------
+# 7/18/13 TODO: Change Player.SetStats() to return success code not object
+#               This will require changing code everywhere a player instance
+#               calls this function

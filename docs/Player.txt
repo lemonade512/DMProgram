@@ -85,3 +85,84 @@ Returns a player's Search skill as an integer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Returns a player's Move Silently skill as an integer
+
+
+        GetHide(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's Hide skill as an integer
+
+
+        SetStats(self, Name, AC, Listen, Spot,
+                 Search, Move_Silently, Hide)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Used to set the statistics of a player instance. The best way to input the
+stats is to pack a dictionary with all the necessary key-value pairs.
+
+Input:
+    -Name
+    -AC
+    -Listen
+    -Spot
+    -Search
+    -Move_Silently
+    -Hide
+
+Output:
+    -returns an updated player instance
+
+Invariables:
+    -The player_id of the returned player must match the player_id of the
+    original player (i.e. the player_id does not get changed)
+
+Example Use:
+    stats = {'Name':Player1, 'AC':4, 'Listen':4, 'Spot':2, 'Search':6,
+             'Move_Silently':3, 'Hide':7}
+    player = player.SetStats(**stats)
+
+
+        AddItem(self, item)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Adds an item to the player's item_list
+
+Input:
+    -self
+    -item (Item)
+
+
+        RemoveItem(self, item)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Removes an item from the player's item_list
+
+Input:
+    -self
+    -item (Item)
+
+
+        AddItems(self, *args, **kwargs)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Adds a list of items to the players item_list
+
+Input:
+    -self
+    -*args (multiple items)
+
+Example Implementation:
+    item1 = Item()
+    item2 = Item()
+    item3 = Item()
+    player.AddItems(item1, item2, item3)
+
+Alternate Implementation:
+    item_list = [item1, item2, item3]
+    player.AddItems(*item_list)
+
+
+        GetItems(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns the list of items that the player owns

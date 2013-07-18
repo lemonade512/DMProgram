@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ../dmprogram/create_test_players.py

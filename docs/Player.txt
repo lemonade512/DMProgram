@@ -1,0 +1,87 @@
+======================
+|       Player       |
+======================
+
+Object that holds the statistics for a player.
+
+
+        __init__(self, player_id=-1, Name='',
+                 AC=-1, Listen=-1, Spot=-1, Search=-1,
+                 Move_Silently=-1, Hide=-1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates a player with a dict containing the player's name, player_id,
+and basic statistics used  by the DM. Also creates an empty list that will
+contain the items that the player owns.
+
+Input:
+    -self
+    -player_id:
+        -This is generally created by the database when a new player is created
+    -Name
+    -AC
+    -Listen
+    -Spot
+    -Search
+    -Move_Silently
+    -Hide
+
+Output:
+    -Player object
+
+
+        GetStats(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's stats in the format of a dictionary
+
+Input:
+    -self
+
+Output:
+    -dictionary:
+        -Contains {"ID":player_id, "Name":Name, "AC":AC, "Listen":Search,
+                   "Listen":Listen, "Spot":Spot, "Search":Search,
+                   "Move_Silently":Move_Silently, "Hide":Hide}
+
+
+        GetName(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's name as a string
+
+
+        GetID(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's ID as an integer
+
+
+        GetAC(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's AC as an integer
+
+
+        GetListen(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's Listen skill as an integer
+
+
+        GetSpot(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's Spot skill as an integer
+
+
+        GetSearch(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's Search skill as an integer
+
+
+        GetMoveSilently(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a player's Move Silently skill as an integer

@@ -1,0 +1,26 @@
+# File that will detail current bugs, ideas, hacks, etc.
+
+# Tags to use as comments:
+#    TODO = general things that need doing
+#    FIXME = general cleanup tasks
+#    NOTE = general note
+#    BUG = A bug in the program that needs to be fixed
+#    XXX = major problem
+# Adding date and time of tag additions could be helpful
+
+#-------------------------------------------------------------------------------
+# 7/15/13 TODO: Add a table for player spells in the database
+# 7/15/13 TODO: Add a list box and text box for displaying player spells
+#-------------------------------------------------------------------------------
+# 7/15/13 TODO: Add an alignment tracking system for players
+#-------------------------------------------------------------------------------
+# 7/15/13 TODO: Write documentation for ConfirmationDialog.py
+# 7/15/13 TODO: Write documentation for Database.py
+# 7/15/13 TODO: Write documentation for Item.py
+# 7/15/13 TODO: Write documentation for MainFrame.py
+# 7/15/13 TODO: Write documentation for MonsterPanel.py
+# 7/15/13 TODO: Write documentation for NewItemDialog.py
+# 7/15/13 TODO: Write documentation for NewPlayerDialog.py
+# 7/15/13 TODO: Write documentation for Player.py
+#-------------------------------------------------------------------------------
+# 7/15/13 TODO: Write tests for a lot of stuff

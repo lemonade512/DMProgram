@@ -1,0 +1,238 @@
+==========================
+|      Player Panel      |
+==========================
+
+Panel designed to keep track of player stats and equipment. The panel is
+placed on the notebook that is on the main frame.
+
+
+        __init__(self, parent)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates the panel with all of the sizers, buttons and widgets. The widgets
+are also bound to a function if need be.
+
+Input:
+    -self
+    -parent (wxWindow)
+
+Layout:
+panel:
+	-vbox:
+		-hbox2:
+			-pl_stext1
+			-pl_stext2
+			-item_stext1
+			-item_stext2
+		-hbox:
+			-plbtn_sizer:
+				-new_plbtn (bound to OnNewPlayer)
+				-edit_plbtn (bound to OnEditPlayer)
+				-del_plbtn (bound to OnDelPlayer)
+			-pl_lbox (bound to OnPlayerSelect)
+			-plstats_text
+			-line
+			-itembtn_sizer:
+				-new_itembtn (bound to OnNewItem)
+				-edit_itembtn (bound to OnEditItem)
+				-del_itembtn (bound to OnDelItem)
+			-item_lbox (bound to OnItemSelect)
+			-item_text
+		-line2
+		-backstory_header
+		-bstory_sizer:
+			-bstory_tctrl
+
+
+		UpdateItemLbox(self, items)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Updates the item listbox with items
+
+Input:
+	-self
+	-items:
+		-list of items to update the listbox with
+
+Output:
+	-Listbox gets updated with the new items
+
+
+		OnPlayerSelect(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user selects one of the names from the
+player listbox. Updates the item listbox, player stats, and
+the backstory text if there is a backstory available in the backstories 
+directory. The backstory needs to be of the format player_name+".txt".
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-Updates item listbox
+	-Updates stat text box
+	-Updates backstory (assuming there is one)
+
+
+		OnNewPlayer(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the new player button. Starts
+a NewPlayerDialog with the title "New Player". The user can then 
+insert the new players stats into the text fields. If the dialog returns
+the code wx.ID_OK then the database is called to create a new player
+with the stats returned from the dialog. The player is then inserted
+into the player list and the player listbox.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-A new player is put in the database
+	-A new player is added to player_list
+	-A new player is added to pl_lbox
+
+
+		OnDelPlayer(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the delete player button. Pops
+up a confirmation dialog to make sure the user wants to delete the
+selected player. If no player is selected the dialog still comes up
+but doesn't effect anything. If the dialog returns the cod wx.ID_OK then
+the selected player is removed from the player listbox, the database,
+and the player list. The stat text box and item lbox are both cleared.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-Selected player is deleted from the database
+	-Selected player is removed from player_list
+	-Selected player is removed from pl_lbox
+	-plstats_text is cleared
+	-item_lbox is cleared
+
+
+		OnEditPlayer(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the edit player button. Pops up
+a NewPlayerDialog with the selected players current stats already
+in the input fields. The user can then edit the stats in the text fields.
+If the dialog returns with the id wx.ID_OK then the selected player's
+stats are updated in the list box (if name was changed) and the player's
+stat box.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-Selected player's name is updated in pl_lbox
+	-Selected player's stats are updated in plstats_text
+
+
+		GetSelectedPlayer(self):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function that gets the selected player from the player listbox.
+
+Input:
+	-None
+
+Output:
+	-returns Player object
+
+
+		GetSelectedItem(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function that gets the selected item from the item listbox
+
+Input:
+	-None
+
+Output:
+	-returns Item object
+
+
+		OnItemSelect(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user selects an item from the item list box. When
+an iem is selected the item text box is updated with the selected items
+description.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-updates the item text to the selected item description
+
+
+		OnNewItem(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the new item button. Starts a
+NewItemDialog titled New Item. The player then inputs the name and
+description of the new item. If the dialog returns with the code
+wx.ID_OK then the database is called to create a new item with the
+stats returned from the dialog. The item is then added to the selected
+player's list of items and the item list box is updated.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-A new item is created in the database
+	-The new item is added to the player's list of items
+	-The item listbox is updated
+
+
+		OnEditItem(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the edit item button. Opens a
+NewItemDialog with the selected item's stats already input. The user
+can then edit the item as they wish. If the dialog returns with the
+code wx.ID_OK then the item is saved in the database, the item listbox
+is updated, and a select event is pushed to the event handler selecting
+the edited item.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-The edited item is saved in the database
+	-The item list box is updated with the new stats
+	-A select event is pushed to the event handler selecting the
+	edited item
+
+
+		OnDelItem(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user presses the item delete button. If there
+is no item selected nothing happens. If an item is selected a confirmation
+dialog pops up requesting the user to confirm the delete. If the dialog
+returns with the code wx.ID_OK then the item is deleted from the database,
+the item is removed from the players item list, the item text box is
+cleared and the item list box is updated.
+
+Input:
+	-self
+	-e (event)
+
+Output:
+	-Selected item is deleted from the database
+	-Selected item is deleted from the selected player's item list
+	-item_text is cleared
+	-item_lbox is updated

@@ -1,0 +1,63 @@
+===========================
+|          Item           |
+===========================
+
+Object that holds the statisticks for an item
+
+
+        __init__(self, item_id, player_id,
+                 Name, Description)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates an item with its ID, owner ID, Name and description.
+
+Input:
+    -item_id (unique id for this item)
+    -player_id (owners ID number)
+    -Name (item name)
+    -Description
+
+Output:
+    -a new player is created
+
+
+        GetName(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns the item's name as a string
+
+
+        GetID(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns the item_id as an integer
+
+
+        GetPlayerID(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns the owner's player_id as an integer
+
+
+        GetDescription(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns an item's description as a string
+
+
+        SetStats(self, Name, Description)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Used to set the statistics of an item
+
+Input:
+    -self
+    -Name (item name)
+    -Description
+
+Output:
+    -returns the updated item object
+
+Invariables:
+    -The item_id of the returned item must match the item_id of the
+    original item (i.e. the item_id does not get changed)

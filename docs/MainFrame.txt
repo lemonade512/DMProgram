@@ -1,0 +1,36 @@
+======================
+|     MainFrame      |
+======================
+
+Main frame of the program.
+
+On Execution:
+    -creates an App object
+    -creates a MainFrame object
+    -runs App's main loop
+
+
+        __init__(self, parent, title)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates the frame with all of the sizers and layout tools needed.
+
+Input:
+    -self
+    -parent (wxWindow)
+    -title (title of frame)
+
+Layout:
+self.scroll (wx.ScrolledWindow):
+    -sizer (HORIZONTAL):
+        -p (wx.Panel):
+            -sizer2 (HORIZONTAL):
+                -nb (wx.Notebook):
+                    -ppanel (PlayerPanel)
+                    -mpanel (MonsterPanel)
+
+
+        InitUI(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates the user interface for the frame.

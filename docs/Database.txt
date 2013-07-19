@@ -1,0 +1,151 @@
+================================
+|          Database.py         |
+================================
+
+Creates and manages the sqlite database that is used to save the players
+and items.
+
+Constants:
+    -path (absolute path to file's directory)
+    -filename (name of this file)
+
+
+        __init__(self, name)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creates a connection to the sqlite database and makes sure the database
+has loaded the necessary tables.
+
+Input:
+    -self
+    -name (filename of the database)
+
+Initiated variables:
+    -self.con (connection object to database)
+
+Output:
+    -prints "Database database_name loaded"
+
+
+        SavePlayers(self, player_list)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Saves multiple players to the function in a list.
+
+Input:
+    -self
+    -player_list (list of Player objects)
+
+Output:
+    -all players in the player_list are saved to the database
+
+
+        SavePlayer(self, player)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Saves a single player to the database.
+
+Input:
+    -self
+    -player (Player object)
+
+Output:
+    -saves player to the database
+
+
+        SaveItems(self, item_list)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Saves a list of items into the database.
+
+Input:
+    -self
+    -item_list (list of Item objects)
+
+Output:
+    -saves all of the items in item_list to the database
+
+
+        SaveItem(self, item)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Saves a single item to the database.
+
+Input:
+    -self
+    -item (Item object)
+
+Output:
+    -item is saved to the database
+
+
+        LoadPlayers(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a list of Player objects stored in the database.
+
+
+        LoadPlayer(self, player_id)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns a single Player object that corresponds to player_id
+in the database.
+
+Input:
+    -self
+    -player_id
+
+Output:
+    -Returns a single Player object
+
+
+        DeletePlayer(self, player)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deletes player (Player object) from the database.
+
+
+        Delete Item(self, item)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deletes item (Item object) from the database
+
+
+        CreateNewPlayer(self, stats_dict)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creates a new player in the database and returns a Player object.
+This should be called to create any Player so as to avoid player_id
+conflicts.
+
+Input:
+    -self
+    -stats_dict:
+        -'Name' (Name of the player)
+        -'AC'
+        -'Listen'
+        -'Spot'
+        -'Search'
+        -'Move_Silently'
+        -'Hide'
+
+Output:
+    -returns a new player (Player object)
+
+
+        CreateNewItem(self, stats_dict)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creates a new item in the database and returns an Item object. Any time
+a new item needs to be created this function should be called in order
+to avoid item_id conflicts.
+
+Input:
+    -self
+    -stats_dict:
+        -'player_id'  (player_id of the item's owner)
+        -'Name'  (Name of the item)
+        -'Description' (item's description)
+
+Output:
+    -returns a new item (Item object)

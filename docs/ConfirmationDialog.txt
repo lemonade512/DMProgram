@@ -1,0 +1,54 @@
+==================================
+|       ConfirmationDialog       |
+==================================
+
+Dialog that confirms a user's decision.
+
+
+        __init__(self, parent, title, text)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates a modal dialog that displays the text, an Yes button,
+and a No button. This method calls InitUI().
+
+Input:
+    -self
+    -parent (wxWindow)
+    -title
+    -text
+
+Output:
+    -A confirmation dialog
+
+
+        InitUI(self, text)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates the user interface for this dialog and displays
+the input text.
+
+Input:
+    -self
+    -text to be displayed
+
+Layout:
+vbox1:
+    -pnl:
+        -vbox2:
+            -st (static text)
+            -btn_sizer:
+                -ybtn (bound to OnYes)
+                -nbtn (bound to OnNo)
+
+
+        OnNo(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function called when the user hits the nbtn. This destroys the
+dialog.
+
+
+        On(self, e):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Function that ends the dialog returning the code wx.ID_OK

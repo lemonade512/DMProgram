@@ -1,8 +1,13 @@
 #!/usr/bin/python
 
+import sys
+sys.path.append('..')
+
 from Player import Player
 from Item import Item
-from Database import db
+from Database import Database
+
+db = Database('test.db')
 
 new_player_stats = {
 	'Name':'TestPlayer',

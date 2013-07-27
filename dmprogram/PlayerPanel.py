@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!usr/bin/env python
 
 # PlayerPanel.py
 
@@ -8,12 +8,14 @@ import os
 path, filename = os.path.split(os.path.abspath(__file__))
 
 import utils
-from Database import db
+from Database import Database
 from Player import Player
 from Item import Item
 from NewPlayerDialog import NewPlayerDialog
 from NewItemDialog import NewItemDialog
 from ConfirmationDialog import ConfirmationDialog
+
+db = Database('../save.db')
 
 default_text = ''
 

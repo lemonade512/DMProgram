@@ -1,7 +1,7 @@
 import sys
 
-from Database import db
-
+from Database import Database
+db = Database('../save.db')
 
 p1_stats = {
 		'Name':'Test Player 1',

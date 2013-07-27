@@ -12,6 +12,7 @@ Object that holds the statisticks for an item
 Initiates an item with its ID, owner ID, Name and description.
 
 Input:
+    -self
     -item_id (unique id for this item)
     -player_id (owners ID number)
     -Name (item name)

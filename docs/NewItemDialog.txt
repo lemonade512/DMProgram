@@ -1,0 +1,56 @@
+========================
+|     NewItemDialog    |
+========================
+
+Dialog that prompts the user to create or edit an item. When the dialog
+returns with a code of wx.ID_OK the stats entered by the user should be
+in a dict called output. (i.e. NewItemDialog.output is the dict with the
+entered values)
+
+
+        __init__(self, parent, title,
+                 stats=empty_stats, *args, **kwargs)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initiates the dialog with the input fields containing either an empty
+string or the stats of an item being edited.
+
+Input:
+    -self
+    -parent (wxWindow)
+    -title (title shown at top of dialog)
+    -stats:
+        -default: empty dict with keys 'Name' and 'Description'
+        -dict with stats of item to be edited (same keys)
+
+Layout:
+vbox1:
+    -pnl:
+        -vbox2:
+            -grid_sizer:
+                --------------------------------------------------
+                |  st1 (wx.StaticText)  |  tctrl1 (wx.TextCtrl)  |
+                --------------------------------------------------
+                |  st2 (wx.StaticText)  |  tctrl2 (wx.TextCtrl)  |
+                --------------------------------------------------
+                
+                st1 = Name
+                tctrl1 = Name entry field
+                st2 = Description
+                tctrl2 = Description entry field
+            -hbox:
+                -okbtn (bound to OnOk)
+                -clsbtn (bound to OnClose)
+
+
+        OnClose(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Method called when the close button is hit. Destroys the dialog.
+
+
+        OnOk(self, e)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Method called when the OK button is hit. Sets the output dict and
+ends the dialog and returns the code wx.ID_OK.

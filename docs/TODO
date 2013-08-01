@@ -24,10 +24,12 @@
 # 7/15/13 TODO: Write documentation for Player.py                   DONE
 # 7/18/13 NOTE: Might want to have a DOCS tag for documentation tasks
 # ------------------------------------------------------------------------------
-# 7/15/13 TODO: Write tests for a lot of stuff
-# 7/18/13 TODO: Design testing framework
+# 7/27/13 TODO: Setup Nose testing framework                        DONE
+# 7/27/13 TODO: Write test suite for Database
+# 7/27/13 TODO: Write test suite for Player                         DONE
+# 7/27/13 TODO: Write test suite for Item
 # ------------------------------------------------------------------------------
-# 7/18/13 TODO: Change Player.SetStats() to return success code not object
+# 7/18/13 TODO: Change Player.SetStats() to return success code not object.
 #               This will require changing code everywhere a player instance
 #               calls this function
 # 7/18/13 TODO: Change Item.SetStats() to return success code instead of

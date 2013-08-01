@@ -9,8 +9,6 @@ import utils
 from Player import Player
 from Item import Item
 
-#full_path = os.path.realpath(__file__)
-#path = os.path.dirname(full_path)
 path, filename = os.path.split(os.path.abspath(__file__))
 
 class Database():
@@ -22,7 +20,9 @@ class Database():
             print "Database",name,"loaded"
             sql = utils.readData(path+"/sqlScripts/player_save.sql")
             cur.executescript(sql)
-
+    
+    def __del__(self):
+        self.con.close()
 
     def SavePlayers(self, player_list):
         for p in player_list:

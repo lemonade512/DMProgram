@@ -1,1 +1,21 @@
-This is a fun little project I am designing in my free time to help me be a great Dungeon Master for my DnD group.
+This is a fun little project I am designing in my free time to make Dungeon
+Mastering easier.
+
+To run the program execute the 'run' script located in the bin directory.
+
+To run all of the current tests execute the 'run_tests' script in the bin
+directory.
+
+To run a single test or test suite execute the 'run_tests' script in the
+bin directory with the name of the test or test suite you want to run.
+
+Example:
+    To run a test suite named Database in the DMProgram/dmprogram/tests/tests
+    directory you would run:
+
+        ./run_tests Database
+
+    To run a test named test_create_player in the Database suite you would
+    run:
+
+        ./run_tests Database/test_create_player.py

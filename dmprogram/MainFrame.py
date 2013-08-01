@@ -38,6 +38,7 @@ class MainFrame(wx.Frame):
 
 		self.Maximize()
 
-app = wx.App()
-MainFrame(None, "Main Frame")
-app.MainLoop()
+def main():
+    app = wx.App()
+    MainFrame(None, "Main Frame")
+    app.MainLoop()

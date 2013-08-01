@@ -64,6 +64,7 @@ class Player():
 
     def AddItems(self, *args, **kwargs):
         for item in args:
+            assert(isinstance(item,Item))
             self.AddItem(item)
 
     def GetItems(self):

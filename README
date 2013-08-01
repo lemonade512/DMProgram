@@ -10,12 +10,12 @@ To run a single test or test suite execute the 'run_tests' script in the
 bin directory with the name of the test or test suite you want to run.
 
 Example:
-    To run a test suite named Database in the DMProgram/dmprogram/tests/tests
+    To run a test suite named Database in the DMProgram/dmprogram/dm_tests/tests
     directory you would run:
 
-        ./run_tests Database
+        ./run_tests Player
 
     To run a test named test_create_player in the Database suite you would
     run:
 
-        ./run_tests Database/test_create_player.py
+        ./run_tests Player/test_player_items.py

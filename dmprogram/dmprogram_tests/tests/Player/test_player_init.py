@@ -2,8 +2,15 @@
 
 from dmprogram.Player import Player
 from nose.tools import *
+import unittest
+import sys, os
 
-class TestPlayer:
+class TestPlayer(unittest.TestCase):
+
+    @classmethod
+    def setup_class(cls):
+        print ''
+        print os.path.split(__file__)[1]
 
     def test_default_init(self):
         p1 = Player()

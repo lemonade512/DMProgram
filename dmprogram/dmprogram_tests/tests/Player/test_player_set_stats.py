@@ -4,11 +4,14 @@
 
 from dmprogram.Player import Player
 from nose.tools import *
+import sys, os
 
 class TestPlayer:
 
     @classmethod
     def setup_class(cls):
+        print ''
+        print os.path.split(__file__)[1]
         cls.test_player = Player(1,'test_player',2,3,4,5,6,7)
 
     def test_set_all_stats(self):

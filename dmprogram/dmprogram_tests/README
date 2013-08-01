@@ -1,0 +1,12 @@
+When writing tests there are a few necessary requirements:
+
+    1) The test suite directories must have an __init__.py file
+    2) The test file names must contain 'test_' in order to be picked up
+    by the tester
+    3) The tests in each file must be in a class whose name begins with
+    'Test' (such as class TestPlayer) and the class must be a child of
+    unittest.TestCase
+    4) Each test class must contain a class method called 'setup_class' that
+    must at least print the name of the file being tested
+
+Look at the already completed tests for examples.

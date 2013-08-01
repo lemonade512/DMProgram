@@ -32,4 +32,3 @@ class TestPlayer(unittest.TestCase):
         item3 = Item(2,1,'test_item3','description3')
         self.test_player.AddItems(item1, item2, item3)
         assert_equals(self.test_player.GetItems(), [item1,item2,item3])
-        print 'Yea buddy'

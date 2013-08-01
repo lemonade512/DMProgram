@@ -1,5 +1,6 @@
 def setup_package():
-    print "setting up package"
+    print "setting up tests package"
 
 def teardown_package():
-    print "tearing down package"
+    print '\n'
+    print "tearing down tests package"

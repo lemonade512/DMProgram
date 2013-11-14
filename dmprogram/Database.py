@@ -9,7 +9,7 @@ import utils
 from Player import Player
 from Item import Item
 
-path, filename = os.path.split(os.path.abspath(__file__))
+PATH, FILENAME = os.path.split(os.path.abspath(__file__))
 
 class Database():
 
@@ -18,7 +18,7 @@ class Database():
         with self.con:
             cur = self.con.cursor()
             print "Database",name,"loaded"
-            sql = utils.readData(path+"/sqlScripts/player_save.sql")
+            sql = utils.readData(PATH+"/sqlScripts/player_save.sql")
             cur.executescript(sql)
     
     def __del__(self):

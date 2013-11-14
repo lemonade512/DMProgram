@@ -36,7 +36,7 @@
 #               object. This will require changing code everywhere an item
 #               instance calls this function
 # ------------------------------------------------------------------------------
-# 7/18/13 TODO: Change Database constants to use all uppercase letters
+# 7/18/13 TODO: Change Database constants to use all uppercase letters DONE
 #               (i.e. change path and filename to PATH and FILENAME)
 # 7/18/13 NOTE: Might want to look into handling SQL errors in the Database?
 # ------------------------------------------------------------------------------
